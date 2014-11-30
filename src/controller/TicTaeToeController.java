@@ -59,11 +59,12 @@ public class TicTaeToeController {
 
 	public boolean isCurrentPlayerWinnerSecondaryDiagonal() {
 		//FIXME: Complete
+		int numberOfRows = this.ticTacToe.getNumberOfRows();
 		int numberOfCols = this.ticTacToe.getNumberOfCols();
-		boolean winner = false;
+		boolean winner = Boolean.FALSE;
 		int matches = 0;
-		for(int i = 0; i<numberOfCols; i++){
-			if(this.ticTacToe.containsValue(i, numberOfCols-i, currentPlayer)){
+		for(int j = 0; j<numberOfCols; j++){
+			if(this.ticTacToe.containsValue(numberOfRows-1-j, j, currentPlayer)){
 				matches++;
 			}
 			winner = (matches == numberOfCols);
@@ -74,7 +75,7 @@ public class TicTaeToeController {
 	public boolean isCurrentPlayerWinnerMainDiagonal() {
 		//FIXME: Complete
 		int numberOfRows = this.ticTacToe.getNumberOfRows();
-		boolean winner = false;
+		boolean winner = Boolean.FALSE;
 		int matches = 0;
 		for(int i = 0; i<numberOfRows; i++){
 			if(this.ticTacToe.containsValue(i, i, currentPlayer)){
@@ -93,9 +94,9 @@ public class TicTaeToeController {
 		//Check if currentPlayer is a winner in Cols
 		int matches = 0;
 		winner = Boolean.FALSE;
-		for(int i=0;i<numberOfCols && !winner;i++){
+		for(int j=0;j<numberOfCols && !winner;j++){
 			matches = 0;
-			for(int j=0;j<numberOfRows && !winner;j++){
+			for(int i=0;i<numberOfRows && !winner;i++){
 				if(this.ticTacToe.containsValue(i, j, currentPlayer)){
 					matches++;
 				}
@@ -130,10 +131,10 @@ public class TicTaeToeController {
 		boolean winner = false; 
 		//Check if one of the conditions is full fill. If one of the conditon is true, the if won't check the rest
 		//of conditions
-		/*if((isWinnerSecondaryDiagonal()||isWinnerMainDiagonal()||
-				isWinnerInCols()||this.isWinnerInRows()){
+		if(this.isCurrentPlayerWinnerSecondaryDiagonal()||this.isCurrentPlayerWinnerMainDiagonal()||
+				this.isCurrentPlayerWinnerInRows()||this.isCurrentPlayerWinnerInCols()){
 			winner = true;
-		}*/
+		}
 		return winner; 	
 	}
 
