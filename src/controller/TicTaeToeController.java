@@ -8,6 +8,13 @@ import model.TicTacToe;
  * See FIXME comments to implement the missing functionality.
  * 
  * @author chema
+ * 
+ * Students:
+ * @author Rodrigo Mompo Redoli 
+ * @author Jorge Ramirez Cobo 
+ * 
+ *The code is published in a public repository. 
+ *https://github.com/Rodriwp/TicTacToeGUI
  *
  */
 public class TicTaeToeController {
